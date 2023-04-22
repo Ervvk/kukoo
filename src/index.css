@@ -7,3 +7,29 @@
 body {
   font-family: (--font-family);
 }
+
+:root {
+  --color-primary: rgb(248, 248, 248);
+  --color-highlight: rgb(163, 41, 194);
+  --color-warning: red;
+  --color-font-primary: black;
+  --color-button-primary: rgb(255, 254, 253);
+  --color-button-secondary: rgb(255, 224, 247);
+  --color-hover-primary: rgb(253, 241, 255);
+  --color-hover-secondary: rgb(241, 216, 236);
+  --color-element-primary: rgb(194, 134, 179);
+  --color-element-dark: rgb(226, 209, 209);
+  --color-element-light: white;
+
+  --space-small: 1rem;
+  --space-medium: 2rem;
+  --space-big: 3rem;
+  --space-large: 6rem;
+
+  --shadow: 8px 8px 38px -14px rgba(133, 136, 163, 0.4);
+  --blur: 10px;
+
+  --border-solid: 1px solid rgb(244, 233, 252);
+  --border-radius: 10rem;
+  --border-radius-small: 1rem;
+}
