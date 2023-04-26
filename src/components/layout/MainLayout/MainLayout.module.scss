@@ -1,5 +1,5 @@
-.main {
-  height: 85vh;
+.content {
+  background-color: var(--color-background);
+  height: calc(100vh - 7rem);
   padding: var(--space-big);
-  background-color: var(--color-primary);
 }

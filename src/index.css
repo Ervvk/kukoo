@@ -4,13 +4,11 @@
   margin: 0;
 }
 
-body {
-  font-family: (--font-family);
-}
-
 :root {
   --color-primary: rgb(248, 248, 248);
   --color-highlight: rgb(163, 41, 194);
+  --color-background-light: white;
+  --color-background: rgb(252, 252, 252);
   --color-warning: red;
   --color-font-primary: black;
   --color-button-primary: rgb(255, 254, 253);
@@ -21,10 +19,10 @@ body {
   --color-element-dark: rgb(226, 209, 209);
   --color-element-light: white;
 
-  --space-small: 1rem;
-  --space-medium: 2rem;
-  --space-big: 3rem;
-  --space-large: 6rem;
+  --space-small: 0.75rem;
+  --space-medium: 1.5rem;
+  --space-big: 2.5rem;
+  --space-large: 5rem;
 
   --shadow: 8px 8px 38px -14px rgba(133, 136, 163, 0.4);
   --blur: 10px;

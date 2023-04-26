@@ -1,0 +1,15 @@
+.card {
+  @extend .flex-center-column;
+  width: 35rem;
+  height: 30rem;
+  gap: var(--space-medium);
+  border: var(--border-solid);
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--shadow);
+  padding: var(--space-medium);
+  padding-top: var(--space-big);
+}
+
+.button-demo {
+  width: 80%;
+}

@@ -1,0 +1,13 @@
+.header {
+  @extend .flex-center;
+  @extend .flex-between;
+
+  height: max-content;
+  gap: var(--space-big);
+  padding: 0 var(--space-large);
+  border-bottom: 1px solid rgb(218, 211, 211);
+}
+
+.header-group {
+  @extend .flex;
+}

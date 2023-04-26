@@ -1,0 +1,21 @@
+@mixin setBreakpoint($screenwidth) {
+  @media only screen and (max-width: $screenwidth) {
+    @content;
+  }
+}
+
+@mixin setVisibility($state) {
+  @if $state == hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  @if $state == visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@mixin setFontColor($color) {
+  color: var($color);
+  -webkit-text-fill-color: var($color);
+}

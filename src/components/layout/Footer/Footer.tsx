@@ -1,5 +1,5 @@
-//import styles from './Footer.module.scss';
+import styles from './Footer.module.scss';
 
 export const Footer = () => {
-  return <div>Footer</div>;
+  return <footer className={styles['footer']}>Created by Eryk Baranowski</footer>;
 };
