@@ -1,0 +1,25 @@
+.card {
+  @extend .flex-center-column;
+  width: max-content;
+  height: max-content;
+  min-height: 15rem;
+  min-width: 35rem;
+
+  padding: var(--space-medium) var(--space-medium);
+}
+.card-header {
+  @extend .flex;
+  width: 100%;
+  padding: 0 var(--space-big);
+  justify-content: flex-start;
+}
+.card-content {
+  @extend .flex-center-column;
+  width: 100%;
+  padding: var(--space-medium) var(--space-big);
+  gap: var(--space-large);
+}
+.card-title {
+  font-size: 1.25rem;
+  color: var(--color-font-light);
+}

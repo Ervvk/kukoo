@@ -9,8 +9,6 @@ const links = [
     label: 'Dashboard',
     url: '/',
   },
-  { id: 2, label: 'Market', url: '/market' },
-  { id: 3, label: 'Deliveries', url: '/deliveries' },
 ];
 
 export const Navigation = () => {

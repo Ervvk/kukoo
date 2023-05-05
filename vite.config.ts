@@ -8,7 +8,7 @@ export default ({ mode }) => {
   return defineConfig({
     plugins: [react(), tsconfigPaths()],
     resolve: {
-      alias: [{ find: '@', replacement: './src' }],
+      alias: [{ find: '@', replacement: '/src' }],
     },
     css: {
       preprocessorOptions: {

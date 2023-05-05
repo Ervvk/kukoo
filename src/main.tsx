@@ -8,10 +8,10 @@ import { queryClient } from './lib/tanstack-query.ts';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <BrowserRouter>
-    <MantineProvider withGlobalStyles withNormalizeCSS>
-      <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <MantineProvider withGlobalStyles withNormalizeCSS>
         <App />
-      </QueryClientProvider>
-    </MantineProvider>
+      </MantineProvider>
+    </QueryClientProvider>
   </BrowserRouter>
 );

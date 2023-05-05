@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { useCodeAuth } from '../../stores/auth';
 
+import styles from './LoginForm.module.scss';
+
 export const LoginForm = () => {
   const authUser = useCodeAuth();
   const navigate = useNavigate();
@@ -21,21 +23,19 @@ export const LoginForm = () => {
     },
   });
 
+  const handleFormSubmit = () =>
+    form.onSubmit(async (formValues) => {
+      const shouldPass = await authUser(formValues.code);
+      setCodeError(!shouldPass);
+      if (shouldPass) navigate('/');
+    });
+
   return (
-    <form
-      onSubmit={form.onSubmit(async (formValues) => {
-        const shouldPass = await authUser(formValues.code);
-        if (shouldPass) {
-          setCodeError(false);
-          navigate('/');
-        } else {
-          setCodeError(true);
-        }
-      })}
-      style={{ width: '80%' }}
-    >
+    <form onSubmit={handleFormSubmit()} className={styles['login-form']}>
       <Stack>
-        {codeError === true && <p style={{ color: 'red' }}>Wrong access code! Try again.</p>}
+        {codeError === true && (
+          <p className={styles['login-error']}>Wrong access code! Try again.</p>
+        )}
         <TextInput
           required
           label="Access Code"

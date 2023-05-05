@@ -1,0 +1,17 @@
+.table {
+  border: 1px solid rgb(243, 240, 240);
+}
+
+.table-cell {
+  white-space: nowrap;
+}
+
+.table-wrapper {
+  @extend .flex-column;
+  gap: var(--space-medium);
+}
+
+.table-pagination-wrapper {
+  @extend .flex;
+  justify-content: flex-end;
+}

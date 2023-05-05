@@ -1,0 +1,22 @@
+.dashboard-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.dashboard {
+  @extend .flex-column;
+  gap: var(--space-big);
+  padding: var(--space-small) var(--space-big);
+}
+
+.dashboard-header {
+  @extend .flex-between;
+  align-items: center;
+  gap: var(--space-big);
+  height: max;
+  &-icons {
+    @extend .flex;
+    gap: var(--space-medium);
+  }
+}

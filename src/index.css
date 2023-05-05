@@ -10,7 +10,9 @@
   --color-background-light: white;
   --color-background: rgb(252, 252, 252);
   --color-warning: red;
-  --color-font-primary: black;
+  --color-font-primary: rgb(52, 65, 139);
+  --color-font-dark: rgb(18, 26, 66);
+  --color-font-light: rgb(80, 97, 194);
   --color-button-primary: rgb(255, 254, 253);
   --color-button-secondary: rgb(255, 224, 247);
   --color-hover-primary: rgb(253, 241, 255);

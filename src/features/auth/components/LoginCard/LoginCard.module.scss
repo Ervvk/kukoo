@@ -1,7 +1,8 @@
 .card {
   @extend .flex-center-column;
+  justify-content: flex-start;
   width: 35rem;
-  height: 30rem;
+  height: 32rem;
   gap: var(--space-medium);
   border: var(--border-solid);
   border-radius: var(--border-radius-small);
@@ -12,4 +13,10 @@
 
 .button-demo {
   width: 80%;
+}
+
+.card-title {
+  margin-top: var(--space-medium);
+  color: rgb(49, 49, 138);
+  font-weight: 500;
 }

@@ -1,0 +1,24 @@
+.capacity-details {
+  padding: var(--space-medium);
+  width: max-content;
+  @extend .flex-column;
+
+  &-value {
+    font-size: 2rem;
+    color: var(--color-font-primary);
+  }
+
+  &-title {
+    color: var(--color-font-light);
+    font-size: 1.2rem;
+  }
+}
+
+.capacity-content {
+  @extend .flex-column;
+}
+
+.capacity {
+  @extend .flex;
+  gap: var(--space-big);
+}

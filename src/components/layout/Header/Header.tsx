@@ -19,7 +19,7 @@ export const Header = () => {
         <Logo />
         <Navigation />
       </div>
-      <div className={styles['header-group']}>
+      <div className={styles['header-group']} style={{ marginRight: '3rem' }}>
         <Button
           variant="light"
           color="indigo"
