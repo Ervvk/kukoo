@@ -16,7 +16,6 @@ export const useAuthStore = create<AuthState>()((set) => ({
     const accountDetails = await getAccount(code);
     const authDetails = (accountDetails as Account) || null;
     const authResult = authDetails !== null;
-
     set({ account: authDetails, isLogged: authResult });
     return authResult;
   },

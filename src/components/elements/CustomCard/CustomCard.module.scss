@@ -1,23 +1,22 @@
 .card {
   @extend .flex-center-column;
+  justify-content: flex-start;
   width: max-content;
   height: max-content;
-  min-height: 15rem;
+  min-height: 21rem;
   min-width: 35rem;
-
-  padding: var(--space-medium) var(--space-medium);
+  padding: var(--space-medium);
 }
 .card-header {
   @extend .flex;
   width: 100%;
-  padding: 0 var(--space-big);
-  justify-content: flex-start;
+  padding: 0 var(--space-medium);
 }
 .card-content {
   @extend .flex-center-column;
   width: 100%;
   padding: var(--space-medium) var(--space-big);
-  gap: var(--space-large);
+  margin-top: var(--space-small);
 }
 .card-title {
   font-size: 1.25rem;

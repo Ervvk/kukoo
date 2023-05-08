@@ -5,7 +5,7 @@ export interface Company extends BaseEntity {
   location: string;
 }
 
-export interface CompanyReport {
+export interface CompanyDetails {
   company_id: number;
   company_name: string;
   company_location: string;

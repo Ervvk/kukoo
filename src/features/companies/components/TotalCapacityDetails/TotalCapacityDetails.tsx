@@ -1,16 +1,16 @@
 import { Button } from '@mantine/core';
 
 import { TotalCapacityWidget } from '../../../companies/components';
-import { useCompanyReport } from '../../stores/company';
+import { useCompanyDetails } from '../../stores/company';
 import { calculateOccupiedPercentage, calculateOccupiedSpace } from '../../utils';
 
 import styles from './TotalCapacityDetails.module.scss';
 
 export const TotalCapacityDetails = () => {
-  const companyReport = useCompanyReport();
-  if (!companyReport) return <p>No data</p>;
+  const companyDetails = useCompanyDetails();
+  if (!companyDetails) return <p>No data</p>;
 
-  const { total_capacity, total_occupied, total_transactions_value } = companyReport;
+  const { total_capacity, total_occupied, total_transactions_value } = companyDetails;
   const occupiedSpace = calculateOccupiedSpace(total_occupied, total_transactions_value);
   const occupiedPercentage = calculateOccupiedPercentage(total_capacity, occupiedSpace);
 
@@ -26,7 +26,7 @@ export const TotalCapacityDetails = () => {
         <div className={styles['capacity-details']}>
           <p className={styles['capacity-details-title']}>Occupied Space</p>
           <p>
-            {companyReport ? (
+            {companyDetails ? (
               <b className={styles['capacity-details-value']}>
                 {occupiedSpace}/{total_capacity}
                 <span>

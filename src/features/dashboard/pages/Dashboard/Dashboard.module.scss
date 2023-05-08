@@ -1,7 +1,12 @@
 .dashboard-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  @extend .flex-column;
+  gap: var(--space-medium);
+  padding-bottom: var(--space-medium);
+
+  &-row {
+    @extend .flex-between;
+    gap: var(--space-medium);
+  }
 }
 
 .dashboard {

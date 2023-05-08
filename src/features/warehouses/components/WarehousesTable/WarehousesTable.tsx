@@ -1,5 +1,5 @@
-import { TotalCapacityWidget } from '..';
 import { CustomTable } from '../../../../components/elements';
+import { TotalCapacityWidget } from '../../../companies/components';
 
 const elements = [
   {

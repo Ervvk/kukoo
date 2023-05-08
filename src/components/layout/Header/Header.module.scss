@@ -9,5 +9,12 @@
 }
 
 .header-group {
-  @extend .flex;
+  @extend .flex-center;
+  margin-right: 3rem;
+  gap: var(--space-big);
+}
+
+.header-badge {
+  @extend .flex-center;
+  gap: var(--space-small);
 }

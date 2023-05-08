@@ -30,7 +30,7 @@ export const CustomTable = ({ schema, elements }: CustomTableProps) => {
   return (
     <div className={styles['table-wrapper']}>
       <Table
-        horizontalSpacing={'2rem'}
+        horizontalSpacing={'3rem'}
         verticalSpacing=".5rem"
         striped
         highlightOnHover

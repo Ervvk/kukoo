@@ -33,7 +33,7 @@ export const options = {
         display: false,
       },
       time: {
-        unit: 'week' as const,
+        unit: 'month' as const,
       },
     },
     y: {
@@ -53,10 +53,11 @@ export const options = {
 
 const deliveryData = [
   { date: '2022-01-01', occupied_value: 10 },
-  { date: '2022-01-02', occupied_value: 5 },
-  { date: '2022-01-03', occupied_value: 22 },
-  { date: '2022-01-05', occupied_value: 5 },
-  { date: '2022-01-09', occupied_value: 22 },
+
+  { date: '2022-02-09', occupied_value: 22 },
+  { date: '2022-03-02', occupied_value: 5 },
+
+  { date: '2022-04-09', occupied_value: 22 },
 ];
 
 export const DeliveriesChart = () => {
@@ -68,13 +69,13 @@ export const DeliveriesChart = () => {
         label: 'Daily Delivery Size',
         data: deliveryData.map((el) => el.occupied_value),
         borderColor: 'blue',
-        backgroundColor: 'rgba(255, 99, 132, 0.9)',
+        backgroundColor: 'white',
       },
     ],
   };
   return (
-    <div style={{ width: '40rem', height: '12rem' }}>
-      <Line options={options} data={data} style={{ width: '100%' }} />
+    <div style={{ width: '35rem', height: '12.5rem' }}>
+      <Line options={options} data={data} />
     </div>
   );
 };
