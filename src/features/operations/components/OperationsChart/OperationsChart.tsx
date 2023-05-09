@@ -10,7 +10,10 @@ import {
   TimeScale,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+
 import 'chartjs-adapter-date-fns';
+import { timestampToDate } from '../../../../utils/calculations';
+import { OperationMonthly } from '../../types';
 
 ChartJS.register(
   CategoryScale,
@@ -51,30 +54,26 @@ export const options = {
   },
 };
 
-const deliveryData = [
-  { date: '2022-01-01', occupied_value: 10 },
+type OperationsChartProps = {
+  chartData: OperationMonthly[] | undefined;
+};
 
-  { date: '2022-02-09', occupied_value: 22 },
-  { date: '2022-03-02', occupied_value: 5 },
-
-  { date: '2022-04-09', occupied_value: 22 },
-];
-
-export const DeliveriesChart = () => {
-  const labels = deliveryData.map((element) => element.date);
+export const OperationsChart = ({ chartData }: OperationsChartProps) => {
+  if (!chartData) return <p>No data</p>;
+  const labels = chartData.map((element) => timestampToDate(element.month));
   const data = {
     labels,
     datasets: [
       {
-        label: 'Daily Delivery Size',
-        data: deliveryData.map((el) => el.occupied_value),
+        label: 'Daily Operation Size',
+        data: chartData.map((el) => el.occupied_value),
         borderColor: 'blue',
         backgroundColor: 'white',
       },
     ],
   };
   return (
-    <div style={{ width: '35rem', height: '12.5rem' }}>
+    <div style={{ width: '33rem', height: '12.5rem' }}>
       <Line options={options} data={data} />
     </div>
   );

@@ -8,7 +8,10 @@
 
 .table-wrapper {
   @extend .flex-column;
+  justify-content: space-between;
   gap: var(--space-medium);
+  min-height: 28rem;
+  height: max-content;
 }
 
 .table-pagination-wrapper {

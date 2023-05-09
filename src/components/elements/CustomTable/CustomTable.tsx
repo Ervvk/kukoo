@@ -10,13 +10,17 @@ type tableSchemaElement = {
   extra?: any;
 };
 
-type CustomTableProps = { schema: tableSchemaElement[]; elements: any[] };
+type CustomTableProps = { schema: tableSchemaElement[]; elements: any[]; pageRows: number };
 
-export const CustomTable = ({ schema, elements }: CustomTableProps) => {
+const paginate = (array: any[], page_size: number, page_number: number) => {
+  return array.slice((page_number - 1) * page_size, page_number * page_size);
+};
+
+export const CustomTable = ({ schema, elements, pageRows }: CustomTableProps) => {
   const [activePage, setPage] = useState(1);
 
-  const rows = elements.map((element) => (
-    <tr key={element.warehouse_id}>
+  const rows = elements.map((element, id) => (
+    <tr key={id}>
       {schema.map((schemaElement) => (
         <td className={styles['table-cell']} key={schemaElement.id}>
           {schemaElement.key.length > 0
@@ -30,8 +34,8 @@ export const CustomTable = ({ schema, elements }: CustomTableProps) => {
   return (
     <div className={styles['table-wrapper']}>
       <Table
-        horizontalSpacing={'3rem'}
-        verticalSpacing=".5rem"
+        horizontalSpacing={'2.5rem'}
+        verticalSpacing="1rem"
         striped
         highlightOnHover
         className={styles['table']}
@@ -45,10 +49,14 @@ export const CustomTable = ({ schema, elements }: CustomTableProps) => {
             ))}
           </tr>
         </thead>
-        <tbody>{rows}</tbody>
+        <tbody>{paginate(rows, pageRows, activePage)}</tbody>
       </Table>
       <div className={styles['table-pagination-wrapper']}>
-        <Pagination value={activePage} onChange={setPage} total={10} />
+        <Pagination
+          value={activePage}
+          onChange={setPage}
+          total={Math.round(elements.length / pageRows)}
+        />
       </div>
     </div>
   );
