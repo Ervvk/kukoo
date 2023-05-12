@@ -1,5 +1,3 @@
-import { Button } from '@mantine/core';
-
 import { TotalCapacityWidget } from '../../../companies/components';
 import { useCompanyDetails } from '../../stores/company';
 import { calculateOccupiedPercentage, calculateOccupiedSpace } from '../../utils';
@@ -38,8 +36,8 @@ export const TotalCapacityDetails = () => {
               <p> No data</p>
             )}
           </p>
+          <p className={styles['capacity-detail-small']}>All company warehouses</p>
         </div>
-        <Button variant="light"> Go to market</Button>
       </div>
     </div>
   );

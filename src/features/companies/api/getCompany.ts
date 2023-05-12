@@ -4,7 +4,7 @@ import { CompanyDetails } from '../types';
 export const getCompanySummary = async (companyId: number) => {
   try {
     const companyResponse = await supabase
-      .from('companies_report')
+      .from('company_report')
       .select(`*`)
       .eq('company_id', companyId);
     const companyData = composeSupabaseData(companyResponse);

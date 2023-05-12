@@ -4,21 +4,27 @@
   @extend .flex-column;
 
   &-value {
-    font-size: 2rem;
+    font-size: 2.4rem;
     color: var(--color-font-primary);
   }
 
   &-title {
     color: var(--color-font-light);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 
 .capacity-content {
   @extend .flex-column;
+  margin-top: var(--space-small);
 }
 
 .capacity {
   @extend .flex;
-  gap: var(--space-big);
+  gap: var(--space-small);
+}
+
+.capacity-detail-small {
+  color: var(--color-font-primary);
+  font-size: 1.1rem;
 }

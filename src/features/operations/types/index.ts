@@ -14,3 +14,17 @@ export interface OperationDetails extends BaseEntity {
   date: Date;
   occupied_value: number;
 }
+
+export interface NewOperationDetails {
+  warehouse_id: number;
+  company_id: number;
+  value: number;
+}
+
+export const operationTypes = {
+  delivery: '1',
+  pickup: '2',
+};
+
+export type OperationType = keyof typeof operationTypes;
+export type OperationTypeValue = (typeof operationTypes)[OperationType];

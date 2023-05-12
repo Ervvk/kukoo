@@ -36,7 +36,6 @@ export const CustomTable = ({ schema, elements, pageRows }: CustomTableProps) =>
       <Table
         horizontalSpacing={'2.5rem'}
         verticalSpacing="1rem"
-        striped
         highlightOnHover
         className={styles['table']}
       >

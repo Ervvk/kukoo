@@ -6,7 +6,8 @@ export const getOperationsMonthly = async (companyId: number) => {
     const companyResponse = await supabase
       .from('deliveries_monthly')
       .select(`*`)
-      .eq('company_id', companyId);
+      .eq('company_id', companyId)
+      .order('month');
     const companyData = composeSupabaseData(companyResponse);
     if (companyData) return companyData as OperationMonthly[];
   } catch (error) {

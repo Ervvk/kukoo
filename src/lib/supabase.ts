@@ -14,3 +14,5 @@ export const composeSupabaseData = (response: any) => {
     console.error('rejected error', error);
   }
 };
+
+export const getCurrentDate = () => new Date().toISOString().toLocaleString();

@@ -6,7 +6,8 @@ export const getOperationsDetails = async (companyId: number) => {
     const companyResponse = await supabase
       .from('deliveries_details')
       .select(`*`)
-      .eq('company_id', companyId);
+      .eq('company_id', companyId)
+      .order('date');
     const companyData = composeSupabaseData(companyResponse);
     if (companyData) return companyData as OperationDetails[];
   } catch (error) {

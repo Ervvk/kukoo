@@ -5,4 +5,5 @@ export interface WarehouseDetails {
   capacity: number;
   occupied_sum: number;
   transactions_value: number;
+  free_space: number;
 }

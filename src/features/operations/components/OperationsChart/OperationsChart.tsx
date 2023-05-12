@@ -65,7 +65,7 @@ export const OperationsChart = ({ chartData }: OperationsChartProps) => {
     labels,
     datasets: [
       {
-        label: 'Daily Operation Size',
+        label: 'Monthly Operations Value',
         data: chartData.map((el) => el.occupied_value),
         borderColor: 'blue',
         backgroundColor: 'white',
