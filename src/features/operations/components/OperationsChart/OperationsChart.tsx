@@ -15,6 +15,8 @@ import 'chartjs-adapter-date-fns';
 import { timestampToDate } from '../../../../utils/calculations';
 import { OperationMonthly } from '../../types';
 
+import styles from './OperationsChart.module.scss';
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -73,7 +75,7 @@ export const OperationsChart = ({ chartData }: OperationsChartProps) => {
     ],
   };
   return (
-    <div style={{ width: '33rem', height: '12.5rem' }}>
+    <div className={styles['chart-wrapper']}>
       <Line options={options} data={data} />
     </div>
   );

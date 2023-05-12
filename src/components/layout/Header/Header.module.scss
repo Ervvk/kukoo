@@ -1,4 +1,4 @@
-.header {
+.header-content-desktop {
   @extend .flex-center;
   @extend .flex-between;
 
@@ -6,15 +6,41 @@
   gap: var(--space-big);
   padding: 0 var(--space-big);
   border-bottom: 1px solid rgb(218, 211, 211);
+
+  @include setBreakpoint(1200px) {
+    display: none;
+  }
+}
+
+.header-content-mobile {
+  display: none;
+
+  @include setBreakpoint(1200px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-big);
+  }
 }
 
 .header-group {
   @extend .flex-center;
   margin-right: 3rem;
   gap: var(--space-big);
+
+  &-mobile {
+    @extend .flex-center-column;
+    gap: var(--space-big);
+    margin-top: var(--space-big);
+  }
 }
 
 .header-badge {
   @extend .flex-center;
   gap: var(--space-small);
+  &-name {
+    @include setBreakpoint(1200px) {
+      font-size: 1.3rem;
+    }
+  }
 }

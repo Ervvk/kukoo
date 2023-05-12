@@ -12,6 +12,9 @@
     color: var(--color-font-light);
     font-size: 1.3rem;
   }
+  @include setBreakpoint(450px) {
+    padding-top: 0;
+  }
 }
 
 .capacity-content {
@@ -22,9 +25,12 @@
 .capacity {
   @extend .flex;
   gap: var(--space-small);
+  @include setBreakpoint(450px) {
+    flex-direction: column;
+  }
 }
 
 .capacity-detail-small {
   color: var(--color-font-primary);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }

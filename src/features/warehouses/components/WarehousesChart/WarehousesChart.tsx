@@ -41,7 +41,6 @@ type WarehousesChartProps = {
 export const WarehousesChart = ({ chartData }: WarehousesChartProps) => {
   if (!chartData) return <p>No data</p>;
   const labels = chartData.map((item) => item.warehouse_name);
-
   const data = {
     labels,
     datasets: [

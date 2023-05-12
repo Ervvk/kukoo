@@ -1,4 +1,11 @@
 .chart-wrapper {
-  width: 35rem;
+  width: 32rem;
   height: 13.5rem;
+  @include setBreakpoint(1850px) {
+    width: 90%;
+  }
+  @include setBreakpointMin(2000px) {
+    width: 80%;
+    height: 20rem;
+  }
 }

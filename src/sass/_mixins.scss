@@ -4,6 +4,12 @@
   }
 }
 
+@mixin setBreakpointMin($screenwidth) {
+  @media only screen and (min-width: $screenwidth) {
+    @content;
+  }
+}
+
 @mixin setVisibility($state) {
   @if $state == hidden {
     opacity: 0;

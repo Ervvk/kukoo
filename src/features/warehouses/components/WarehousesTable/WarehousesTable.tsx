@@ -2,38 +2,7 @@ import { CustomTable } from '../../../../components/elements';
 import { TotalCapacityWidget } from '../../../companies/components';
 import { calculateOccupiedPercentage } from '../../../companies/utils';
 import { WarehouseDetails } from '../../types';
-/*
-const elements = [
-  {
-    warehouse_id: 6,
-    warehouse_name: 'Warehouse X',
-    warehouse_capacity: 230,
-    occupied_sum: 155,
-    extraValue: 93,
-  },
-  {
-    warehouse_id: 7,
-    warehouse_name: 'Warehouse X',
-    warehouse_capacity: 250,
-    occupied_sum: 155,
-    extraValue: 71,
-  },
-  {
-    warehouse_id: 8,
-    warehouse_name: 'Warehouse Y',
-    warehouse_capacity: 330,
-    occupied_sum: 200,
-    extraValue: 21,
-  },
-  {
-    warehouse_id: 9,
-    warehouse_name: 'Warehouse Z',
-    warehouse_capacity: 230,
-    occupied_sum: 100,
-    extraValue: 8,
-  },
-];
-*/
+
 const tableSchema = [
   { id: 1, name: 'Name', key: 'warehouse_name', extra: null },
   { id: 2, name: 'Capacity', key: 'capacity', extra: null },
@@ -46,7 +15,9 @@ type WarehousesTableProps = {
 };
 
 export const WarehousesTable = ({ tableData }: WarehousesTableProps) => {
-  const tableElements = tableData.map((item) => ({
+  if (!tableData) return <p>No data</p>;
+
+  const tableElements = tableData?.map((item) => ({
     ...item,
     extraValue: calculateOccupiedPercentage(
       item.capacity,
@@ -54,6 +25,7 @@ export const WarehousesTable = ({ tableData }: WarehousesTableProps) => {
     ),
   }));
 
+  //Add a column with a graph to the table schema
   const tableSchemaWithExtra = [
     ...tableSchema,
     {

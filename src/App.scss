@@ -1,1 +1,17 @@
-
+* {
+  @include setBreakpoint(1850px) {
+    font-size: 0.9rem;
+  }
+  @include setBreakpoint(1700px) {
+    font-size: 0.85rem;
+  }
+  @include setBreakpoint(1600px) {
+    font-size: 0.8rem;
+  }
+  @include setBreakpoint(1350px) {
+    font-size: 0.7rem;
+  }
+  @include setBreakpoint(1200px) {
+    font-size: 0.8rem;
+  }
+}

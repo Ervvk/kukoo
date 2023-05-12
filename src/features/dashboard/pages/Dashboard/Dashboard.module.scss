@@ -6,6 +6,18 @@
   &-row {
     @extend .flex-between;
     gap: var(--space-medium);
+
+    @include setBreakpoint(1250px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include setBreakpointMin(2000px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
 
@@ -13,6 +25,12 @@
   @extend .flex-column;
   gap: var(--space-big);
   padding: var(--space-small) var(--space-big);
+  @include setBreakpoint(1050px) {
+    padding: var(--space-small);
+  }
+  @include setBreakpoint(500px) {
+    align-items: center;
+  }
 }
 
 .dashboard-header {
@@ -20,6 +38,7 @@
   align-items: center;
   gap: var(--space-big);
   height: max;
+
   &-icons {
     @extend .flex;
     gap: var(--space-medium);

@@ -1,6 +1,6 @@
 import { Button, Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { TruckDelivery, FileDownload } from 'tabler-icons-react';
+import { TruckDelivery } from 'tabler-icons-react';
 
 import { CustomCard } from '../../../../components/elements';
 import { useAccount } from '../../../auth/stores/auth';
@@ -10,7 +10,6 @@ import { WarehousesTable, WarehousesChart } from '../../../warehouses/components
 import useDashboard from '../../hooks/useDashboard';
 
 import styles from './Dashboard.module.scss';
-
 export const Dashboard = () => {
   const account = useAccount();
   const { companyWarehouses, operationsMonthly, companyOperations } = useDashboard(account);
@@ -23,7 +22,6 @@ export const Dashboard = () => {
           <Button leftIcon={<TruckDelivery />} onClick={openModal}>
             New Operation
           </Button>
-          <Button leftIcon={<FileDownload />}>Operations Report</Button>
         </div>
         <div className={styles['dashboard-header-icons']}></div>
       </div>
@@ -35,6 +33,7 @@ export const Dashboard = () => {
           <CustomCard title="Warehouses capacity">
             <WarehousesChart chartData={companyWarehouses} />
           </CustomCard>
+
           <CustomCard title="Operations by months">
             <OperationsChart chartData={operationsMonthly} />
           </CustomCard>

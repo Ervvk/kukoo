@@ -7,11 +7,20 @@
 }
 
 .table-wrapper {
+  width: 100%;
+
   @extend .flex-column;
+  align-items: center;
   justify-content: space-between;
   gap: var(--space-medium);
   min-height: 28rem;
   height: max-content;
+  padding-bottom: var(--space-medium);
+  //overflow-x: scroll;
+  @include setBreakpoint(800px) {
+    overflow-x: scroll;
+    align-items: flex-start;
+  }
 }
 
 .table-pagination-wrapper {

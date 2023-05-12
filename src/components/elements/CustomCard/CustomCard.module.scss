@@ -4,8 +4,20 @@
   width: max-content;
   height: max-content;
   min-height: 21rem;
-  min-width: 35rem;
+  //min-width: 35rem;
   padding: var(--space-medium);
+
+  @include setBreakpoint(1850px) {
+    width: 90vw;
+  }
+  @include setBreakpoint(1200px) {
+    padding: var(--space-medium) var(--space-small);
+  }
+
+  @include setBreakpointMin(2000px) {
+    width: 90vw;
+    padding: var(--space-medium) var(--space-small);
+  }
 }
 .card-header {
   @extend .flex;
@@ -17,6 +29,10 @@
   width: 100%;
   padding: var(--space-medium) var(--space-big);
   margin-top: var(--space-small);
+
+  @include setBreakpoint(1700px) {
+    padding: var(--space-small) var(--space-small);
+  }
 }
 .card-title {
   font-size: 1.25rem;

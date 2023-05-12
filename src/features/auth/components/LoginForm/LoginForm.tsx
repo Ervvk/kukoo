@@ -10,7 +10,7 @@ import styles from './LoginForm.module.scss';
 export const LoginForm = () => {
   const authUser = useCodeAuth();
   const navigate = useNavigate();
-  const [codeError, setCodeError] = useState<boolean>(false);
+  const [isCodeError, setCodeError] = useState<boolean>(false);
 
   const form = useForm({
     initialValues: {
@@ -30,10 +30,16 @@ export const LoginForm = () => {
       if (shouldPass) navigate('/');
     });
 
+  const handleDemoButton = async () => {
+    const demoUserCode = '982b51a2d6dc9b9a0588dc62c2491303';
+    await authUser(demoUserCode);
+    navigate('/');
+  };
+
   return (
     <form onSubmit={handleFormSubmit()} className={styles['login-form']}>
       <Stack>
-        {codeError === true && (
+        {isCodeError === true && (
           <p className={styles['login-error']}>Wrong access code! Try again.</p>
         )}
         <TextInput
@@ -47,6 +53,9 @@ export const LoginForm = () => {
         />
         <Space />
         <Button type="submit">Submit</Button>
+        <Button className={styles['button-demo']} variant="light" onClick={handleDemoButton}>
+          Run Demo
+        </Button>
       </Stack>
     </form>
   );
