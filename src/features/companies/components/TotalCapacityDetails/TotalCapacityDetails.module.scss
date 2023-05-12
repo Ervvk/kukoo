@@ -1,7 +1,11 @@
 .capacity-details {
-  padding: var(--space-medium);
-  width: max-content;
   @extend .flex-column;
+  width: max-content;
+  padding: var(--space-medium);
+
+  @include setBreakpoint(450px) {
+    padding-top: 0;
+  }
 
   &-value {
     font-size: 2.4rem;
@@ -11,9 +15,6 @@
   &-title {
     color: var(--color-font-light);
     font-size: 1.3rem;
-  }
-  @include setBreakpoint(450px) {
-    padding-top: 0;
   }
 }
 
@@ -25,6 +26,7 @@
 .capacity {
   @extend .flex;
   gap: var(--space-small);
+
   @include setBreakpoint(450px) {
     flex-direction: column;
   }

@@ -7,16 +7,20 @@
 }
 
 .table-wrapper {
-  width: 100%;
-
   @extend .flex-column;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-medium);
-  min-height: 28rem;
+  width: 100%;
   height: max-content;
+  min-height: 28rem;
   padding-bottom: var(--space-medium);
-  //overflow-x: scroll;
+
+  @include setBreakpoint(1450px) {
+    overflow-x: scroll;
+    align-items: flex-start;
+  }
+
   @include setBreakpoint(800px) {
     overflow-x: scroll;
     align-items: flex-start;

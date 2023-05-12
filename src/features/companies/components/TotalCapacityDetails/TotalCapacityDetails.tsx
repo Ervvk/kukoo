@@ -9,6 +9,7 @@ export const TotalCapacityDetails = () => {
   if (!companyDetails) return <p>No data</p>;
 
   const { total_capacity, total_occupied, total_transactions_value } = companyDetails;
+
   const occupiedSpace = calculateOccupiedSpace(total_occupied, total_transactions_value);
   const occupiedPercentage = calculateOccupiedPercentage(total_capacity, occupiedSpace);
 

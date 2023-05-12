@@ -1,3 +1,17 @@
+.dashboard {
+  @extend .flex-column;
+  gap: var(--space-big);
+  padding: var(--space-small) var(--space-big);
+
+  @include setBreakpoint(1050px) {
+    padding: var(--space-small);
+  }
+
+  @include setBreakpoint(500px) {
+    align-items: center;
+  }
+}
+
 .dashboard-content {
   @extend .flex-column;
   gap: var(--space-medium);
@@ -18,18 +32,6 @@
       align-items: center;
       justify-content: center;
     }
-  }
-}
-
-.dashboard {
-  @extend .flex-column;
-  gap: var(--space-big);
-  padding: var(--space-small) var(--space-big);
-  @include setBreakpoint(1050px) {
-    padding: var(--space-small);
-  }
-  @include setBreakpoint(500px) {
-    align-items: center;
   }
 }
 

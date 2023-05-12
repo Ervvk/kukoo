@@ -1,9 +1,8 @@
 .header-content-desktop {
   @extend .flex-center;
   @extend .flex-between;
-
-  height: max-content;
   gap: var(--space-big);
+  height: max-content;
   padding: 0 var(--space-big);
   border-bottom: 1px solid rgb(218, 211, 211);
 
@@ -19,14 +18,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--space-big);
+    padding: var(--space-small) var(--space-large);
   }
 }
 
 .header-group {
   @extend .flex-center;
-  margin-right: 3rem;
   gap: var(--space-big);
+  margin-right: 3rem;
 
   &-mobile {
     @extend .flex-center-column;
@@ -38,6 +37,7 @@
 .header-badge {
   @extend .flex-center;
   gap: var(--space-small);
+
   &-name {
     @include setBreakpoint(1200px) {
       font-size: 1.3rem;

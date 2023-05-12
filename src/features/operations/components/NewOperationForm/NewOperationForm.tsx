@@ -53,6 +53,7 @@ export const NewOperationForm = () => {
       }
     });
 
+  //if the operation is a delivery - we need the amount of free space, otherwise - occupied
   const availableSpace = selectedWarehouse
     ? operationType === operationTypes.delivery
       ? selectedWarehouse.free_space
@@ -98,7 +99,6 @@ export const NewOperationForm = () => {
                   max={availableSpace}
                   placeholder=""
                   label="Operation Size"
-                  withAsterisk
                   {...form.getInputProps('operationSize')}
                 />
                 <Button type="submit">Submit</Button>{' '}

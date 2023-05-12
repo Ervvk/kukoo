@@ -5,6 +5,7 @@ import { Login } from '../features/auth/pages';
 import { useIsLogged } from '../features/auth/stores/auth';
 import { Home, Market } from '../pages';
 
+import NotFound from './NotFound';
 import ProtectedRoute from './ProtectedRoute';
 
 const Routes = () => {
@@ -23,6 +24,7 @@ const Routes = () => {
         <Route path="/market" element={<Market />} />
       </Route>
       <Route path="/login" element={<Login />} />
+      <Route path="*" element={<NotFound />} />
     </Router>
   );
 };

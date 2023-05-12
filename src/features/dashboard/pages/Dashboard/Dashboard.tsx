@@ -10,6 +10,7 @@ import { WarehousesTable, WarehousesChart } from '../../../warehouses/components
 import useDashboard from '../../hooks/useDashboard';
 
 import styles from './Dashboard.module.scss';
+
 export const Dashboard = () => {
   const account = useAccount();
   const { companyWarehouses, operationsMonthly, companyOperations } = useDashboard(account);

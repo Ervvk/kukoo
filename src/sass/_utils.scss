@@ -37,10 +37,3 @@
   @extend .flex-between;
   @extend .flex-column;
 }
-
-.icon-rounded {
-  display: inline-block;
-  background-color: var(--element-primary);
-  border-radius: 50%;
-  padding: 0.5rem;
-}

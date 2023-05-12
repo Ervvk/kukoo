@@ -4,12 +4,12 @@
   width: max-content;
   height: max-content;
   min-height: 21rem;
-  //min-width: 35rem;
   padding: var(--space-medium);
 
   @include setBreakpoint(1850px) {
     width: 90vw;
   }
+
   @include setBreakpoint(1200px) {
     padding: var(--space-medium) var(--space-small);
   }

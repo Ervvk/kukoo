@@ -10,7 +10,7 @@ import styles from './LoginForm.module.scss';
 export const LoginForm = () => {
   const authUser = useCodeAuth();
   const navigate = useNavigate();
-  const [isCodeError, setCodeError] = useState<boolean>(false);
+  const [isCodeWrong, setCodeWrong] = useState<boolean>(false);
 
   const form = useForm({
     initialValues: {
@@ -26,11 +26,13 @@ export const LoginForm = () => {
   const handleFormSubmit = () =>
     form.onSubmit(async (formValues) => {
       const shouldPass = await authUser(formValues.code);
-      setCodeError(!shouldPass);
+      //if login is successful - no error, and vice versa
+      setCodeWrong(!shouldPass);
       if (shouldPass) navigate('/');
     });
 
   const handleDemoButton = async () => {
+    //this is a user code provided for demonstration purposes, real account codes are stored only in the database
     const demoUserCode = '982b51a2d6dc9b9a0588dc62c2491303';
     await authUser(demoUserCode);
     navigate('/');
@@ -39,7 +41,7 @@ export const LoginForm = () => {
   return (
     <form onSubmit={handleFormSubmit()} className={styles['login-form']}>
       <Stack>
-        {isCodeError === true && (
+        {isCodeWrong === true && (
           <p className={styles['login-error']}>Wrong access code! Try again.</p>
         )}
         <TextInput
